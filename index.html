@@ -484,13 +484,16 @@
         function handleMouseDown(event) {
             if (event.target === practiceModeButton) return;
 
+            // Prevent default to stop mouse emulation on touch devices
+            // This must be done BEFORE checking gameActive to handle stage transitions correctly
+            if (event.type === 'touchstart') {
+                event.preventDefault();
+            }
+
             if (gameActive) {
                 if (!isHolding) {
                     if (!audioCtx) { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
-                    // Prevent default to stop mouse emulation on touch devices
-                    if (event.type === 'touchstart') {
-                        event.preventDefault();
-                    }
+
                     isHolding = true;
                     startTime = Date.now();
                     body.classList.add('holding');
