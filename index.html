@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6273611184935541"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Terror</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%23e74c3c' stroke-width='10'/%3E%3Cline x1='50' y1='50' x2='50' y2='20' stroke='%23e74c3c' stroke-width='8' stroke-linecap='round'/%3E%3Cline x1='50' y1='50' x2='75' y2='50' stroke='%23e74c3c' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%23e74c3c' stroke-width='10'/%3E%3Cline x1='50' y1='50' x2='50' y2='20' stroke='%23e74c3c' stroke-width='8' stroke-linecap='round'/%3E%3Cline x1='50' y1='50' x2='75' y2='50' stroke='%23e74c3c' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
@@ -59,7 +61,7 @@
             margin-bottom: 5px;
             color: var(--accent-color);
         }
-        
+
         #highscore-display {
             margin-top: 0;
             margin-bottom: 20px;
@@ -74,7 +76,7 @@
             color: var(--accent-color);
             min-height: 2rem;
         }
-        
+
         #ui-feedback {
             min-height: 150px;
             display: flex;
@@ -91,11 +93,12 @@
             padding: 20px;
             justify-content: flex-start;
         }
-        #ui-feedback.results-mode > h2,
-        #ui-feedback.results-mode > p {
+
+        #ui-feedback.results-mode>h2,
+        #ui-feedback.results-mode>p {
             margin-top: 0;
         }
-        
+
         #target-display {
             font-size: 3.5rem;
             font-weight: 700;
@@ -104,7 +107,7 @@
             opacity: 1;
             transition: opacity 0.4s ease-out;
         }
-        
+
         #target-display.fading-out,
         #progress-container.fading-out {
             opacity: 0;
@@ -138,7 +141,7 @@
             background-color: var(--accent-color);
             border-radius: 5px;
         }
-        
+
         #progress-marker {
             position: absolute;
             top: -15px;
@@ -150,12 +153,13 @@
             border-right: 8px solid transparent;
             border-top: 12px solid var(--perfect-color);
         }
-        
+
         .result-original-target {
             font-size: 2rem;
             font-weight: 600;
             margin: 10px 0;
         }
+
         .result-progress-container {
             position: relative;
             width: 100%;
@@ -165,6 +169,7 @@
             margin: 20px 0;
             overflow: hidden;
         }
+
         .result-progress-bar {
             position: absolute;
             left: 0;
@@ -172,19 +177,53 @@
             height: 100%;
             border-radius: 6px;
         }
-        .result-progress-bar.perfect { background-color: var(--perfect-color); }
-        .result-progress-bar.great { background-color: var(--great-color); }
-        .result-progress-bar.good { background-color: var(--good-color); }
-        .result-progress-bar.close { background-color: var(--close-color); }
-        .result-progress-bar.miss { background-color: var(--miss-color); }
+
+        .result-progress-bar.perfect {
+            background-color: var(--perfect-color);
+        }
+
+        .result-progress-bar.great {
+            background-color: var(--great-color);
+        }
+
+        .result-progress-bar.good {
+            background-color: var(--good-color);
+        }
+
+        .result-progress-bar.close {
+            background-color: var(--close-color);
+        }
+
+        .result-progress-bar.miss {
+            background-color: var(--miss-color);
+        }
 
 
-        #ui-feedback.perfect { color: var(--perfect-color); border-color: var(--perfect-color); }
-        #ui-feedback.great { color: var(--great-color); border-color: var(--great-color); }
-        #ui-feedback.good { color: var(--good-color); border-color: var(--good-color); }
-        #ui-feedback.close { color: var(--close-color); border-color: var(--close-color); }
-        #ui-feedback.miss { color: var(--miss-color); border-color: var(--miss-color); }
-        
+        #ui-feedback.perfect {
+            color: var(--perfect-color);
+            border-color: var(--perfect-color);
+        }
+
+        #ui-feedback.great {
+            color: var(--great-color);
+            border-color: var(--great-color);
+        }
+
+        #ui-feedback.good {
+            color: var(--good-color);
+            border-color: var(--good-color);
+        }
+
+        #ui-feedback.close {
+            color: var(--close-color);
+            border-color: var(--close-color);
+        }
+
+        #ui-feedback.miss {
+            color: var(--miss-color);
+            border-color: var(--miss-color);
+        }
+
         #button-wrapper {
             display: flex;
             justify-content: center;
@@ -192,7 +231,8 @@
             margin-top: 20px;
         }
 
-        #action-button, #practice-mode-button {
+        #action-button,
+        #practice-mode-button {
             padding: 12px 25px;
             font-size: 1rem;
             font-weight: 600;
@@ -204,7 +244,8 @@
             transition: background-color 0.2s ease, transform 0.2s ease;
         }
 
-        #action-button:hover, #practice-mode-button:hover {
+        #action-button:hover,
+        #practice-mode-button:hover {
             background-color: #2980b9;
             transform: translateY(-2px);
         }
@@ -212,12 +253,15 @@
         #practice-mode-button {
             background-color: #7f8c8d;
         }
+
         #practice-mode-button:hover {
             background-color: #95a5a6;
         }
+
         #practice-mode-button.active {
             background-color: var(--perfect-color);
         }
+
         #practice-mode-button.active:hover {
             background-color: #27ae60;
         }
@@ -245,20 +289,21 @@
             }
 
             #button-wrapper {
-                flex-direction: column; /* Stack buttons vertically */
+                flex-direction: column;
+                /* Stack buttons vertically */
                 gap: 10px;
             }
         }
-
     </style>
 </head>
+
 <body>
 
     <div id="game-container">
         <h1>Time Terror</h1>
         <p id="highscore-display"></p>
         <p id="stage-display"></p>
-        
+
         <div id="ui-feedback">
             <!-- Content will be generated by JavaScript -->
         </div>
@@ -269,8 +314,11 @@
         </div>
     </div>
 
-    <div style="width: 90%; max-width: 500px; margin: 20px auto; text-align: left; background-color: var(--container-bg); padding: 20px; border-radius: 15px;">
-        <p>Time Terror is a test of your internal clock and precision. The goal is to hold down your mouse button for the exact amount of time shown on the screen. Practice mode starts a metronome to follow! Can you set a new high score?</p>
+    <div
+        style="width: 90%; max-width: 500px; margin: 20px auto; text-align: left; background-color: var(--container-bg); padding: 20px; border-radius: 15px;">
+        <p>Time Terror is a test of your internal clock and precision. The goal is to hold down your mouse button for
+            the exact amount of time shown on the screen. Practice mode starts a metronome to follow! Can you set a new
+            high score?</p>
         <h2>How to Play</h2>
         <ul style="padding-left: 20px;">
             <li>If you fail, you reset to Stage 1. Your highest stage is always saved.</li>
@@ -279,7 +327,8 @@
     </div>
 
     <footer style="text-align: center; margin-top: 40px; opacity: 0.6;">
-        <p>© 2025 Time Terror by: Jack Gorman <a href="privacy.html" style="color: var(--text-color);">Privacy Policy</a></p>
+        <p>© 2025 Time Terror by: Jack Gorman <a href="privacy.html" style="color: var(--text-color);">Privacy
+                Policy</a></p>
     </footer>
 
     <script>
@@ -299,16 +348,16 @@
         let lastRoundSuccess = false;
         let currentStageIndex = 0;
         let highestStageAchieved = 1;
-        
+
         let isPracticeMode = false;
         let metronomeInterval = null;
 
         let targetDisplay, progressContainer, progressBar, progressMarker, instructions;
 
         const baseStages = [
-            { min: 1,  max: 3  },
-            { min: 3,  max: 5  },
-            { min: 5,  max: 10 },
+            { min: 1, max: 3 },
+            { min: 3, max: 5 },
+            { min: 5, max: 10 },
             { min: 10, max: 15 },
             { min: 15, max: 20 }
         ];
@@ -323,8 +372,8 @@
             gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.2);
             oscillator.connect(gainNode);
             gainNode.connect(audioCtx.destination);
-            if (type === 'start') { oscillator.frequency.value = 880; oscillator.type = 'sine'; } 
-            else if (type === 'end') { oscillator.frequency.value = 440; oscillator.type = 'sine'; } 
+            if (type === 'start') { oscillator.frequency.value = 880; oscillator.type = 'sine'; }
+            else if (type === 'end') { oscillator.frequency.value = 440; oscillator.type = 'sine'; }
             else if (type === 'success') {
                 gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.4);
                 oscillator.frequency.value = 523.25; // C5
@@ -351,7 +400,7 @@
             oscillator.start();
             oscillator.stop(audioCtx.currentTime + 0.3);
         }
-        
+
         function playMetronomeTick() {
             if (!audioCtx) return;
             gameContainer.classList.add('metronome-tick');
@@ -378,7 +427,7 @@
         function setupNewRound() {
             buttonWrapper.classList.remove('hidden');
             uiFeedback.className = '';
-            
+
             uiFeedback.innerHTML = `
                 <h2 id="target-display"></h2>
                 <p id="instructions"></p>
@@ -387,7 +436,7 @@
                     <div id="progress-bar"></div>
                 </div>
             `;
-            
+
             targetDisplay = document.getElementById('target-display');
             instructions = document.getElementById('instructions');
             progressContainer = document.getElementById('progress-container');
@@ -396,7 +445,7 @@
 
             gameActive = true;
             isHolding = false;
-            
+
             let minTime, maxTime;
             if (isPracticeMode) {
                 minTime = baseStages[baseStages.length - 1].min;
@@ -410,12 +459,12 @@
                 minTime = previousMax * Math.pow(1.5, stagesAfterBase - 1);
                 maxTime = minTime * 1.5;
             }
-            
+
             instructions.textContent = "Click and hold until the time. Get within ±0.5s!";
             stageDisplay.textContent = isPracticeMode ? 'Practice Mode' : `Stage ${currentStageIndex + 1}`;
             targetTime = Math.random() * (maxTime - minTime) + minTime;
             targetDisplay.textContent = `${targetTime.toFixed(2)}s`;
-            
+
             updateActionButton();
         }
 
@@ -423,7 +472,7 @@
             if (!isHolding) return;
             const elapsedTime = (Date.now() - startTime) / 1000;
             const progressPercent = Math.min(100, (elapsedTime / targetTime) * 100);
-            
+
             const remainingTime = Math.max(0, targetTime - elapsedTime);
             targetDisplay.textContent = `${remainingTime.toFixed(2)}s`;
 
@@ -434,7 +483,7 @@
 
         function handleMouseDown(event) {
             if (event.target === practiceModeButton) return;
-            
+
             if (gameActive) {
                 if (!isHolding) {
                     if (!audioCtx) { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
@@ -466,10 +515,10 @@
                 handleNextAction();
             }
         }
-        
+
         function handleMouseUp() {
             if (!isHolding) return;
-            
+
             if (metronomeInterval) {
                 clearInterval(metronomeInterval);
                 metronomeInterval = null;
@@ -488,14 +537,14 @@
             const difference = Math.abs(targetTime - heldDuration);
             let message = '';
             let celebrationClass = '';
-            if (difference <= 0.06) { celebrationClass = 'perfect'; message = "PERFECT!"; playSound('success'); } 
-            else if (difference <= 0.21) { celebrationClass = 'great'; message = "Incredible!"; playSound('success'); } 
-            else if (difference <= 0.51) { celebrationClass = 'good'; message = "Good try!"; playCloseMissSound(); } 
-            else if (difference <= 1.01) { celebrationClass = 'close'; message = "So close!"; playSound('miss'); } 
+            if (difference <= 0.06) { celebrationClass = 'perfect'; message = "PERFECT!"; playSound('success'); }
+            else if (difference <= 0.21) { celebrationClass = 'great'; message = "Incredible!"; playSound('success'); }
+            else if (difference <= 0.51) { celebrationClass = 'good'; message = "Good try!"; playCloseMissSound(); }
+            else if (difference <= 1.01) { celebrationClass = 'close'; message = "So close!"; playSound('miss'); }
             else { celebrationClass = 'miss'; message = "Not quite!"; playSound('miss'); }
 
             lastRoundSuccess = (celebrationClass === 'perfect' || celebrationClass === 'great' || celebrationClass === 'good');
-            
+
             let resultHeader;
             if (isPracticeMode) {
                 resultHeader = "<h2>Practice Result</h2>";
@@ -509,7 +558,7 @@
                     resultHeader = "<h2>Stage Clear!</h2>";
                 } else {
                     resultHeader = "<h2>Stage Failed!</h2><p>You've been reset to Stage 1.</p>";
-                    currentStageIndex = 0; 
+                    currentStageIndex = 0;
                 }
             }
 
@@ -530,7 +579,7 @@
                 </p>
                 <p><em>${message}</em></p>
             `;
-            
+
             buttonWrapper.classList.remove('hidden');
             updateActionButton();
         }
@@ -575,13 +624,13 @@
             }
             setupNewRound();
         }
-        
+
         // Event Listeners
         gameContainer.addEventListener('mousedown', handleMouseDown);
         window.addEventListener('mouseup', handleMouseUp);
-        
+
         practiceModeButton.addEventListener('click', togglePracticeMode);
-        
+
         gameContainer.addEventListener('touchstart', handleMouseDown, { passive: false });
         window.addEventListener('touchend', handleMouseUp);
 
@@ -591,4 +640,5 @@
     </script>
 
 </body>
+
 </html>
